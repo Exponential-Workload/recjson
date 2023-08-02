@@ -1,0 +1,8 @@
+src
+node_modules
+docs
+.doctsignore
+jest.config.js
+pnpm-lock.yaml
+rollup.config.js
+tsconfig.json
