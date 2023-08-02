@@ -1,6 +1,6 @@
 {
   "name": "recjson",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "recursive javascript objects made non-recursive",
   "main": "dist/lib.js",
   "module": "dist/lib.esm.js",
