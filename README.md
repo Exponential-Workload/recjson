@@ -4,7 +4,7 @@
 
   [![📝 Documentation](https://img.shields.io/badge/📝-Documentation-blue)](https://gh.expo.moe/recjson)
   [![📦 NPM](https://img.shields.io/npm/v/recjson)](https://npmjs.com/package/recjson)
-  [![🧪 Tests](https://img.shields.io/github/actions/workflow/status/Exponential-Workload/recjson/test.yml?branch=main&label=🧪%20Tests)]()
+  [![🧪 Tests](https://img.shields.io/github/actions/workflow/status/Exponential-Workload/recjson/test.yml?branch=main&label=🧪%20Tests)](https://github.com/Exponential-Workload/recjson/actions/workflows/test.yml)
 
 🔄 JSON-based serialization with the ability to have circular/infinitely-recursive references 🔗
 
