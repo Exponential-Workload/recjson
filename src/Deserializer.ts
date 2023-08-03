@@ -42,7 +42,7 @@ export class Deserializer {
    * The `SerializedObject` is a data structure containing the serialized object
    * with object references represented by indices.
    *
-   * You should probabally use {@see Deserializer.deserializeTyped} instead for typed code.
+   * You should probabally use {@link Deserializer.deserializeTyped} instead for typed code.
    *
    * @param {SerializedObject} serialized - The SerializedObject to be deserialized.
    * @returns {any} The deserialized object.
