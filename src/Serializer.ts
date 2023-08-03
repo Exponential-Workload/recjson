@@ -1,8 +1,11 @@
 import { PrimitiveWithObjects, SerializedObject } from './types';
-import { JSONSerializer } from '@3xpo/microjson'
+import { IndentCharacter, JSONSerializer } from '@3xpo/microjson'
 
 export class Serializer {
-  private jsonSerializer = new JSONSerializer();
+  private jsonSerializer = new JSONSerializer({
+    indentation: 0,
+    indentUsing: IndentCharacter.None
+  });
   private _serialize(obj: PrimitiveWithObjects): number {
     const serialized = this.currentSerialized, objectMap = this.objectMap;
     const object = objectMap.indexOf(obj);
@@ -70,13 +73,13 @@ export class Serializer {
   * console.log(serializedObj3);
   * // Output: { root: 0, obj: [{ a: 'hello', selfRef: 0 }] }
   */
-  public serialize(obj: PrimitiveWithObjects): SerializedObject {
+  public serialize<_Danger_InputtedTypeOverwrite = PrimitiveWithObjects>(obj: _Danger_InputtedTypeOverwrite): SerializedObject {
     this.currentSerialized = {
       root: 0,
       obj: [],
     };
     this.objectMap = [];
-    this.currentSerialized.root = this._serialize(obj);
+    this.currentSerialized.root = this._serialize(obj as PrimitiveWithObjects);
     return this.currentSerialized;
   }
   /**
@@ -95,7 +98,7 @@ export class Serializer {
     * Alias of {@link Serializer.serialize}.
     * @param {PrimitiveWithObjects} obj - The object to be serialized.
     */
-  public stringify(obj: PrimitiveWithObjects): SerializedObject {
+  public stringify<_Danger_InputtedTypeOverwrite = PrimitiveWithObjects>(obj: _Danger_InputtedTypeOverwrite): SerializedObject {
     return this.serialize(obj);
   }
   /**
@@ -111,7 +114,7 @@ export class Serializer {
     * Alias of {@link Serializer.serialize}.
     * @param {PrimitiveWithObjects} obj - The object to be serialized.
     */
-  public encode(obj: PrimitiveWithObjects): SerializedObject {
+  public encode<_Danger_InputtedTypeOverwrite = PrimitiveWithObjects>(obj: _Danger_InputtedTypeOverwrite): SerializedObject {
     return this.serialize(obj);
   }
   /**

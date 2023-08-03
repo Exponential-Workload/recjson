@@ -93,4 +93,23 @@ describe('Serializer', () => {
       ],
     });
   });
+
+  it('should serialize a basic instance of a class', () => {
+    class TestClass {
+      public a = 1;
+      public b = 'hello';
+      public c = true;
+    }
+    const obj = new TestClass();
+    const serialized = serializer.serialize(obj);
+    expect(serialized).toEqual({
+      root: 0,
+      obj: [
+        { a: 1, b: 2, c: 3 },
+        1,
+        'hello',
+        true,
+      ],
+    });
+  });
 });

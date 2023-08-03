@@ -100,4 +100,24 @@ describe('Deserializer', () => {
     expected.push(expected);
     expect(deserialized).toEqual(expected);
   });
+
+  it('should deserialize a basic instance of a class', () => {
+    // taken from Serializer.test.ts
+    const testClassInstanceSerialized = {
+      root: 0,
+      obj: [
+        { a: 1, b: 2, c: 3 },
+        1,
+        'hello',
+        true,
+      ],
+    }
+    const expected = {
+      a: 1,
+      b: 'hello',
+      c: true,
+    }
+    const deserialized = deserializer.deserialize(testClassInstanceSerialized);
+    expect(deserialized).toEqual(expected);
+  })
 });

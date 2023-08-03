@@ -138,7 +138,7 @@ export class Deserializer {
     * @param {string} serialized - The serialized object encoded as JSON
     * @param {boolean} [useNative=false] - Whether to use the native JSON parser instead of microjson
     */
-  public deserializeJson(serialized: string, useNative: boolean = false): any {
+  public deserializeFromJSON(serialized: string, useNative: boolean = false): any {
     return this.deserialize(useNative ? JSON.parse(serialized) : this.jsonParser.parse(serialized));
   }
   /**
@@ -146,7 +146,7 @@ export class Deserializer {
     * @param {string} serialized - The serialized object encoded as JSON
     * @param {boolean} [useNative=false] - Whether to use the native JSON parser instead of microjson
     */
-  public deserializeTypedJson<T extends PrimitiveWithObjects>(serialized: string, useNative: boolean = false): T {
+  public deserializeFromJSONTyped<T extends PrimitiveWithObjects>(serialized: string, useNative: boolean = false): T {
     return this.deserializeTyped<T>(useNative ? JSON.parse(serialized) : this.jsonParser.parse(serialized));
   }
   // parse->serialize aliases
@@ -175,20 +175,20 @@ export class Deserializer {
     return this._deserializeTyped_notPrimitive<T>(serialized);
   }
   /**
-    * Alias to {@link deserializeJson}
+    * Alias to {@link deserializeFromJSON}
     * @param {string} serialized - The serialized object encoded as JSON
     * @param {boolean} [useNative=false] - Whether to use the native JSON parser instead of microjson
     */
-  public parseJson(serialized: string, useNative: boolean = false): any {
-    return this.deserializeJson(serialized, useNative);
+  public parseFromJSON(serialized: string, useNative: boolean = false): any {
+    return this.deserializeFromJSON(serialized, useNative);
   }
   /**
-    * Alias to {@link deserializeTypedJson}
+    * Alias to {@link deserializeFromJSONTyped}
     * @param {string} serialized - The serialized object encoded as JSON
     * @param {boolean} [useNative=false] - Whether to use the native JSON parser instead of microjson
     */
-  public parseTypedJson<T extends PrimitiveWithObjects>(serialized: string, useNative: boolean = false): T {
-    return this.deserializeTypedJson<T>(serialized, useNative);
+  public parseFromJSONTyped<T extends PrimitiveWithObjects>(serialized: string, useNative: boolean = false): T {
+    return this.deserializeFromJSONTyped<T>(serialized, useNative);
   }
   // decode->deserialize aliases
   /**
@@ -216,19 +216,19 @@ export class Deserializer {
     return this._deserializeTyped_notPrimitive<T>(serialized);
   }
   /**
-    * Alias to {@link deserializeJson}
+    * Alias to {@link deserializeFromJSON}
     * @param {string} serialized - The serialized object encoded as JSON
     * @param {boolean} [useNative=false] - Whether to use the native JSON parser instead of microjson
     */
-  public decodeJson(serialized: string, useNative: boolean = false): any {
-    return this.deserializeJson(serialized, useNative);
+  public decodeFromJSON(serialized: string, useNative: boolean = false): any {
+    return this.deserializeFromJSON(serialized, useNative);
   }
   /**
-    * Alias to {@link deserializeTypedJson}
+    * Alias to {@link deserializeFromJSONTyped}
     * @param {string} serialized - The serialized object encoded as JSON
     * @param {boolean} [useNative=false] - Whether to use the native JSON parser instead of microjson
     */
-  public decodeTypedJson<T extends PrimitiveWithObjects>(serialized: string, useNative: boolean = false): T {
-    return this.deserializeTypedJson<T>(serialized, useNative);
+  public decodeFromJSONTyped<T extends PrimitiveWithObjects>(serialized: string, useNative: boolean = false): T {
+    return this.deserializeFromJSONTyped<T>(serialized, useNative);
   }
 }
