@@ -2,4 +2,3 @@ dist
 docs
 node_modules
 .parcel-cache
-src/web.ts
