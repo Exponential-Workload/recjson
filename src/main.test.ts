@@ -134,7 +134,6 @@ describe('Overall end-user functionality', () => {
   it('should serialize and deserialize to json', () => {
     const obj = { a: 1, b: 'hello', c: true };
     const serialized = serializer.serializeToJSON(obj);
-    console.log(serialized);
 
     const deserialized = deserializer.deserializeFromJSON(serialized);
     expect(deserialized).toEqual(obj);
