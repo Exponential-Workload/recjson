@@ -36,9 +36,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build
-        run: pnpm run build
-      - name: Build Docs
-        run: pnpm run build:docs
+        run: pnpm run build-ci
       - name: Copy files
         run: |
           cp LICENSE docs/LICENSE.txt
