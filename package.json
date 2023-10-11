@@ -1,6 +1,6 @@
 {
   "name": "recjson",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "recursive javascript objects made non-recursive",
   "main": "dist/lib.cjs",
   "module": "dist/lib.mjs",
@@ -17,7 +17,7 @@
     "build:docs": "npm run build-typedefs && typedoc --out docs --tsconfig doctsconfig.json dist/main.d.ts",
     "dev:docs": "typedoc --out docs --tsconfig doctsconfig.json dist/main.d.ts --watch",
     "test": "jest",
-    "prepublishOnly": "npm run build && npm run test"
+    "prepublishOnly": "concurrently \"npm:build\" \"npm:test\""
   },
   "exports": {
     ".": {
