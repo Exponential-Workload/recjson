@@ -1,6 +1,6 @@
 {
   "name": "recjson",
-  "version": "1.2.1",
+  "version": "1.2.2-rc1",
   "description": "recursive javascript objects made non-recursive",
   "main": "dist/lib.cjs",
   "module": "dist/lib.mjs",
@@ -50,10 +50,9 @@
     }
   ],
   "license": "MIT",
-  "dependencies": {
-    "@3xpo/microjson": "^1.0.5"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@3xpo/microjson": "^1.0.5",
     "@types/jest": "^29.5.3",
     "concurrently": "^8.2.1",
     "esbuild": "^0.19.4",

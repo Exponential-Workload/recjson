@@ -4,12 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
+devDependencies:
   '@3xpo/microjson':
     specifier: ^1.0.5
     version: 1.0.5
-
-devDependencies:
   '@types/jest':
     specifier: ^29.5.3
     version: 29.5.3
@@ -39,7 +37,7 @@ packages:
 
   /@3xpo/microjson@1.0.5:
     resolution: {integrity: sha512-/Qg839TK8swDl2+0SADv0eWmg5T5xlVCf39tO9R77VZL8IEMu1o5r/Y1voeF7esO7m4IFG8lQUySutDHtlSJyA==}
-    dev: false
+    dev: true
 
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
