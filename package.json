@@ -8,14 +8,13 @@
   "source": "src/main.ts",
   "scripts": {
     "build": "concurrently -P \"npm:build:*\" -- {@}",
-    "build-ci": "npm run build:dts && concurrently -P \"npm:build:*\" -- {@}",
-    "build:dts": "tsc -d --emitDeclarationOnly --sourceMap --removeComments",
+    "build-typedefs": "tsc -d --emitDeclarationOnly --sourceMap --removeComments",
     "build:npm-cjs": "esbuild src/main.ts --minify --sourcemap --bundle --outfile=dist/lib.cjs --platform=node --format=cjs",
     "build:npm-esm": "esbuild src/main.ts --minify --sourcemap --bundle --outfile=dist/lib.mjs --platform=node --format=esm",
     "build:web-mjs": "esbuild src/web.ts --minify --sourcemap --bundle --outfile=dist/lib.web.mjs --platform=browser --format=esm",
     "build:web-cjs": "esbuild src/web.ts --minify --sourcemap --bundle --outfile=dist/lib.web.cjs --platform=browser --format=cjs",
     "build:web-iife": "esbuild src/web.ts --minify --sourcemap --bundle --outfile=dist/lib.web.iife.js --platform=browser --format=iife",
-    "build:docs": "typedoc --out docs --tsconfig doctsconfig.json dist/main.d.ts",
+    "build:docs": "npm run build-typedefs && typedoc --out docs --tsconfig doctsconfig.json dist/main.d.ts",
     "dev:docs": "typedoc --out docs --tsconfig doctsconfig.json dist/main.d.ts --watch",
     "test": "jest",
     "prepublishOnly": "npm run build && npm run build:docs"

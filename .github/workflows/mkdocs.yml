@@ -30,13 +30,13 @@ jobs:
         with:
           version: latest
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "20"
       - name: Install dependencies
         run: pnpm install
       - name: Build
-        run: pnpm run build-ci
+        run: pnpm run build
       - name: Copy files
         run: |
           cp LICENSE docs/LICENSE.txt
