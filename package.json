@@ -17,7 +17,7 @@
     "build:docs": "npm run build-typedefs && typedoc --out docs --tsconfig doctsconfig.json dist/main.d.ts",
     "dev:docs": "typedoc --out docs --tsconfig doctsconfig.json dist/main.d.ts --watch",
     "test": "jest",
-    "prepublishOnly": "npm run build && npm run build:docs"
+    "prepublishOnly": "npm run build && npm run test"
   },
   "exports": {
     ".": {
