@@ -21,14 +21,16 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/main.d.ts",
       "import": "./dist/lib.mjs",
       "require": "./dist/lib.cjs",
-      "types": "./dist/main.d.ts"
+      "default": "./dist/lib.mjs"
     },
     "./web": {
+      "types": "./dist/main.d.ts",
       "import": "./dist/lib.web.mjs",
       "require": "./dist/lib.web.cjs",
-      "types": "./dist/main.d.ts"
+      "default": "./dist/lib.web.mjs"
     }
   },
   "keywords": [
