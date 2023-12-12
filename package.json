@@ -68,5 +68,6 @@
     "type": "git",
     "url": "https://github.com/Exponential-Workload/recjson.git"
   },
-  "homepage": "https://gh.expo.moe/recjson"
+  "homepage": "https://gh.expo.moe/recjson",
+  "sideEffects": false
 }
